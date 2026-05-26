@@ -4,28 +4,29 @@
    ========================================================================== */
 
 :root {
-  --primary-color: #0c2340;       /* Deep Prussian Navy */
-  --primary-light: #1d3557;      /* Lighter Navy */
-  --secondary-color: #008080;     /* Healing Deep Teal */
-  --secondary-light: #00a896;     /* Vibrant Teal */
-  --accent-color: #00b4d8;        /* Soft Blue Accent */
+  --primary-color: #0A2647;       /* Logo Navy Blue */
+  --primary-light: #1e3a60;      /* Lighter Navy */
+  --secondary-color: #1b4965;     /* Slate / Deep Royal Blue */
+  --secondary-light: #3a86c8;     /* Vibrant Accent Blue */
+  --accent-color: #00D2C4;        /* Glowing Logo-Match Green Accent */
   --accent-gold: #c5a880;         /* Premium Gold Accent for Serifs/Awards */
   --whatsapp-color: #25d366;      /* Official WhatsApp Green */
+ --brand-green: #0A7E8C;         /* Premium Logo Brand Green */
   --text-dark: #1e293b;           /* Slate 800 */
   --text-muted: #64748b;          /* Slate 500 */
   --bg-light: #f8fafc;            /* Clean light slate */
   --bg-card: #ffffff;             /* Crisp pure white */
-  --bg-gradient: linear-gradient(135deg, #0c2340 0%, #004d4d 100%);
-  --teal-gradient: linear-gradient(135deg, #008080 0%, #00a896 100%);
+  --bg-gradient: linear-gradient(135deg, #0A2647 0%, #17375e 100%);
+  --teal-gradient: linear-gradient(135deg, #0A2647 0%, #224e7a 100%);
   --soft-gradient: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
   --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   --border-radius-sm: 8px;
   --border-radius-md: 16px;
   --border-radius-lg: 24px;
   --box-shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --box-shadow-md: 0 10px 15px -3px rgba(12, 35, 64, 0.08), 0 4px 6px -2px rgba(12, 35, 64, 0.03);
-  --box-shadow-lg: 0 20px 25px -5px rgba(12, 35, 64, 0.12), 0 10px 10px -5px rgba(12, 35, 64, 0.04);
-  --box-shadow-glow: 0 0 20px rgba(0, 168, 150, 0.3);
+  --box-shadow-md: 0 10px 15px -3px rgba(10, 38, 71, 0.08), 0 4px 6px -2px rgba(10, 38, 71, 0.03);
+  --box-shadow-lg: 0 20px 25px -5px rgba(10, 38, 71, 0.12), 0 10px 10px -5px rgba(10, 38, 71, 0.04);
+  --box-shadow-glow: 0 0 20px rgba(10, 38, 71, 0.3);
 }
 
 /* Base Styles */
@@ -50,6 +51,36 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-justify {
   text-align: justify;
+}
+
+.text-teal-dark {
+  color: var(--primary-color) !important;
+}
+
+/* Global Success indicators mapped to premium Logo Brand Green */
+.text-success {
+  color: var(--brand-green) !important;
+}
+
+.btn-success {
+  background-color: var(--brand-green) !important;
+  border-color: var(--brand-green) !important;
+  color: #ffffff !important;
+}
+
+.btn-success:hover, .btn-success:focus, .btn-success:active {
+  background-color: #086670 !important;
+  border-color: #086670 !important;
+  color: #ffffff !important;
+}
+
+.bg-success {
+  background-color: var(--brand-green) !important;
+}
+
+/* Global Info indicators mapped to premium Logo Brand Green Accent */
+.text-info {
+  color: var(--accent-color) !important;
 }
 
 /* Custom Scrollbar */
@@ -104,12 +135,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-brand-img {
-  max-height: 55px;
+  max-height: 60px;
   transition: var(--transition-smooth);
 }
 
 .navbar-custom.scrolled .navbar-brand-img {
-  max-height: 48px;
+  max-height: 50px;
 }
 
 .nav-link-custom {
@@ -142,7 +173,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-nav {
-  background: var(--teal-gradient);
+  background: var(--primary-color);
   color: #ffffff !important;
   font-weight: 600;
   border: none;
@@ -154,7 +185,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-nav:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 168, 150, 0.4);
+  background: var(--primary-light);
+  box-shadow: 0 6px 12px rgba(10, 38, 71, 0.3);
   color: #ffffff !important;
 }
 
@@ -163,8 +195,9 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 .hero-section {
   position: relative;
-  background: var(--bg-gradient);
-  padding: 160px 0 100px 0;
+  background-color: var(--primary-color);
+  background-image: linear-gradient(135deg, var(--primary-color) 0%, #06182e 100%);
+  padding: 110px 0 100px 0;
   color: #ffffff;
   overflow: hidden;
 }
@@ -194,8 +227,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title span {
-  color: var(--accent-color);
-  background: linear-gradient(120deg, #00f2fe 0%, #4facfe 100%);
+  color: var(--brand-green);
+  background: linear-gradient(120deg, var(--brand-green) 0%, var(--accent-color) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -210,9 +243,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero-badge {
   display: inline-block;
-  background-color: rgba(0, 168, 150, 0.2);
-  border: 1px solid rgba(0, 168, 150, 0.4);
-  color: #00f2fe;
+  background-color: rgba(30, 58, 138, 0.15);
+  border: 1px solid rgba(30, 58, 138, 0.3);
+  color: #38bdf8;
   padding: 6px 16px;
   border-radius: 30px;
   font-weight: 600;
@@ -230,16 +263,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary-custom {
-  background: var(--teal-gradient);
-  border: none;
+  background-color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   color: #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.4);
+  box-shadow: 0 4px 15px rgba(10, 38, 71, 0.25);
+  font-weight: 600;
+  transition: var(--transition-smooth);
 }
 
 .btn-primary-custom:hover {
-  background: linear-gradient(135deg, #00a896 0%, #008080 100%);
+  background-color: var(--primary-light);
+  border-color: var(--primary-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 128, 128, 0.6);
+  box-shadow: 0 8px 20px rgba(10, 38, 71, 0.4);
   color: #ffffff;
 }
 
@@ -247,6 +283,8 @@ h1, h2, h3, h4, h5, h6 {
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.3);
   color: #ffffff;
+  font-weight: 600;
+  transition: var(--transition-smooth);
 }
 
 .btn-secondary-custom:hover {
@@ -254,6 +292,21 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #ffffff;
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* High contrast overrides for CTA buttons on dark navy hero background */
+.hero-content .btn-primary-custom {
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border-color: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.hero-content .btn-primary-custom:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* Hero Vector Frame & Illustrations */
@@ -269,7 +322,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle, rgba(0, 168, 150, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(10, 38, 71, 0.15) 0%, transparent 70%);
   border-radius: 50%;
   animation: pulse-slow 8s infinite alternate;
 }
@@ -294,7 +347,7 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   background: var(--teal-gradient);
   padding: 4px;
-  box-shadow: var(--box-shadow-glow);
+  box-shadow: 0 0 20px rgba(10, 38, 71, 0.4);
 }
 
 .doctor-hero-avatar {
@@ -337,8 +390,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .doctor-hero-badge-2 {
-  bottom: 80px;
-  right: -30px;
+  top: 100px;
+  right: -40px;
   animation: float-slow 4s infinite alternate-reverse 1s;
 }
 
@@ -367,14 +420,14 @@ h1, h2, h3, h4, h5, h6 {
 .quick-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--box-shadow-lg);
-  border-bottom: 4px solid var(--secondary-color);
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .quick-icon-wrapper {
   width: 60px;
   height: 60px;
-  background-color: rgba(0, 128, 128, 0.1);
-  color: var(--secondary-color);
+  background-color: rgba(10, 38, 71, 0.1);
+  color: var(--primary-color);
   border-radius: var(--border-radius-sm);
   display: flex;
   align-items: center;
@@ -499,7 +552,7 @@ h1, h2, h3, h4, h5, h6 {
    Telugu Spotlight Banner
    ========================================================================== */
 .telugu-banner {
-  background: linear-gradient(135deg, #115e59 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #0A2647 0%, #081526 100%);
   color: #ffffff;
   border-radius: var(--border-radius-lg);
   padding: 50px;
@@ -513,7 +566,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(0, 168, 150, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(30, 58, 138, 0.15) 0%, transparent 70%);
   top: -50px;
   right: -50px;
   border-radius: 50%;
@@ -603,15 +656,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--box-shadow-lg), var(--box-shadow-glow);
-  border-color: rgba(0, 168, 150, 0.2);
+  box-shadow: var(--box-shadow-lg), 0 0 20px rgba(10, 38, 71, 0.2);
+  border-color: rgba(10, 38, 71, 0.2);
 }
 
 .service-icon-container {
   width: 70px;
   height: 70px;
-  background-color: rgba(0, 128, 128, 0.08);
-  color: var(--secondary-color);
+  background-color: rgba(10, 38, 71, 0.08);
+  color: var(--primary-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -647,8 +700,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .service-card:hover .service-procedure-tag {
-  background-color: rgba(0, 128, 128, 0.08);
-  color: var(--secondary-color);
+  background-color: rgba(10, 38, 71, 0.08);
+  color: var(--primary-color);
 }
 
 /* ==========================================================================
@@ -709,8 +762,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .quiz-option-btn:hover {
-  background-color: rgba(0, 128, 128, 0.05);
-  border-color: var(--secondary-color);
+  background-color: rgba(10, 38, 71, 0.05);
+  border-color: var(--primary-color);
   transform: translateX(5px);
 }
 
@@ -804,8 +857,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-control-custom:focus {
   background-color: #ffffff;
-  border-color: var(--secondary-color);
-  box-shadow: 0 0 0 4px rgba(0, 128, 128, 0.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(10, 38, 71, 0.1);
   outline: none;
 }
 
@@ -828,7 +881,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 250px;
   height: 250px;
-  background: radial-gradient(circle, rgba(0, 168, 150, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(10, 38, 71, 0.2) 0%, transparent 70%);
   bottom: -50px;
   left: -50px;
   border-radius: 50%;
@@ -851,7 +904,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .accordion-item-custom:hover {
-  border-color: var(--secondary-color);
+  border-color: var(--primary-color);
 }
 
 .accordion-button-custom {
@@ -865,8 +918,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .accordion-button-custom:not(.collapsed) {
-  background-color: rgba(0, 128, 128, 0.05);
-  color: var(--secondary-color);
+  background-color: rgba(10, 38, 71, 0.05);
+  color: var(--primary-color);
   box-shadow: none;
 }
 
@@ -1017,8 +1070,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-floating-top:hover {
-  background-color: var(--secondary-color);
-  box-shadow: 0 8px 25px rgba(0, 128, 128, 0.4);
+  background-color: var(--primary-light);
+  box-shadow: 0 8px 25px rgba(10, 38, 71, 0.4);
 }
 
 /* ==========================================================================
@@ -1072,7 +1125,7 @@ h1, h2, h3, h4, h5, h6 {
    ========================================================================== */
 @media (max-width: 991.98px) {
   .hero-section {
-    padding: 130px 0 80px 0;
+    padding: 100px 0 80px 0;
     text-align: center;
   }
   .hero-title {
@@ -1142,7 +1195,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .doctor-hero-badge-2 {
     right: -15px;
-    bottom: 50px;
+    top: 95px;
   }
   .floating-actions-container {
     bottom: 20px;
@@ -1154,4 +1207,242 @@ h1, h2, h3, h4, h5, h6 {
     height: 48px;
     font-size: 1.25rem;
   }
+}
+
+/* ==========================================================================
+   Image Gallery Styles
+   ========================================================================== */
+.gallery-card {
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--box-shadow-md);
+  transition: var(--transition-smooth);
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-lg), 0 0 20px rgba(10, 38, 71, 0.15);
+  border-color: rgba(10, 38, 71, 0.2);
+}
+
+.gallery-img-container {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.gallery-card:hover .gallery-img {
+  transform: scale(1.08);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 38, 71, 0.85);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition-smooth);
+  padding: 20px;
+}
+
+.gallery-card:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-icon {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+  transform: scale(0.8);
+  transition: var(--transition-smooth);
+}
+
+.gallery-card:hover .gallery-icon {
+  transform: scale(1);
+}
+
+.gallery-caption {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ==========================================================================
+   Andrology & Men's Health Section (Offset Overlapping Circles)
+   ========================================================================== */
+.andrology-health-section {
+  position: relative;
+  background-color: var(--primary-color);
+  background-image: radial-gradient(circle at 50% 50%, #0A2647 0%, #06182e 100%);
+  padding: 90px 0;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* Dot patterns on the left/right of section background */
+.andrology-health-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 180px;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.andrology-health-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 180px;
+  height: 100%;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.andrology-cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+
+.andrology-ui-card {
+  position: relative;
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  transition: var(--transition-smooth);
+}
+
+.andrology-ui-card:hover {
+  transform: translateY(-8px);
+}
+
+.andrology-ui-card .info-box {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border-radius: var(--border-radius-md);
+  width: 100%;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  z-index: 2;
+  box-shadow: var(--box-shadow-md);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.andrology-ui-card.type-a .info-box {
+  justify-content: flex-start;
+  padding-top: 22px;
+}
+
+.andrology-ui-card.type-b .info-box {
+  justify-content: flex-end;
+  padding-bottom: 22px;
+}
+
+.andrology-ui-card .circle-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #ffffff;
+  box-shadow: var(--box-shadow-md);
+  z-index: 3;
+  background-color: #ffffff;
+  transition: var(--transition-smooth);
+}
+
+.andrology-ui-card:hover .circle-image {
+  border-color: var(--secondary-light);
+  box-shadow: 0 10px 25px rgba(58, 134, 200, 0.4);
+}
+
+.andrology-ui-card .circle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.andrology-ui-card:hover .circle-image img {
+  transform: scale(1.06);
+}
+
+/* Alternate Overlapping Positions */
+.andrology-ui-card.type-a {
+  padding-bottom: 95px;
+}
+
+.andrology-ui-card.type-a .circle-image {
+  position: absolute;
+  bottom: 0;
+}
+
+.andrology-ui-card.type-b {
+  padding-top: 95px;
+}
+
+.andrology-ui-card.type-b .circle-image {
+  position: absolute;
+  top: 0;
+}
+
+@media (max-width: 575.98px) {
+  .andrology-cards-wrapper {
+    gap: 40px;
+  }
+  .andrology-ui-card {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* ==========================================================================
+   Videos Section Styles
+   ========================================================================== */
+.video-card {
+  transition: var(--transition-smooth);
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.video-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--box-shadow-lg) !important;
+  border-color: var(--secondary-light) !important;
+}
+
+.video-card iframe {
+  border: 0;
 }

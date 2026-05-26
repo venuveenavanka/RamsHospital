@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initQuiz();
   initBookingForm();
   initSmoothScroll();
+  initGallery();
 });
 
 /**
@@ -326,5 +327,32 @@ function initBookingForm() {
         window.open(`https://wa.me/919536972369?text=${encodedText}`, '_blank');
       };
     }
+  });
+}
+
+/**
+ * Gallery Lightbox Modal Handler
+ */
+function initGallery() {
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  const lightboxModal = document.getElementById('galleryLightboxModal');
+  if (!lightboxModal) return;
+
+  const lightboxImg = document.getElementById('lightbox-image');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  
+  galleryCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const imgSrc = this.getAttribute('data-src');
+      const imgTitle = this.getAttribute('data-title');
+      
+      if (lightboxImg && lightboxCaption) {
+        lightboxImg.src = imgSrc;
+        lightboxCaption.innerText = imgTitle;
+        
+        const bsModal = new bootstrap.Modal(lightboxModal);
+        bsModal.show();
+      }
+    });
   });
 }
